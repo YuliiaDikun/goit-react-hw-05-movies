@@ -1,15 +1,18 @@
 .movie{
+  margin-top: 15px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .image {
   border-radius: 5px;
+  width: 150px; 
 }
 
 .movieDescription {
-  margin-top: 6px; 
+  max-width: 240px; 
 }
-.movieName {
-  margin-top: 20px;
+.movieName { 
   font-size: 20px;
   line-height: calc(23 / 20);
 }
@@ -59,10 +62,11 @@
     margin-right: 68px;
   }
   .movieDescription{
-    max-width: 264px;
+    max-width: 350px;
     margin-top: 0;
   }
   .movieName {
+    margin-top: 20px;
     margin-top: 0;
   }
   .gridContainer{
@@ -71,7 +75,7 @@
 }
 @media screen and (min-width: 1200px) {
   .image {
-    width: 375px;
+    width: 550px;
     height: 478px;
     margin-right: 16px;
   }

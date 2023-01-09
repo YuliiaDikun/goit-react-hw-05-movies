@@ -27,7 +27,7 @@ export const Movie = () => {
       <div className={css.movieDescription}>
         <h2 className={css.movieName}>{title || name}</h2>
         <div className={css.gridContainer}>
-          <i claclassNamess={css.movieItemTitle}>Vote / Votes</i>
+          <i className={css.movieItemTitle}>Vote / Votes</i>
           <div className={css.value}>
             <span className={css.voteFocus}>{vote_average}</span>
             <span> / </span>
@@ -37,7 +37,7 @@ export const Movie = () => {
           <span className={css.value}>{popularity}</span>
           <i className={css.movieItemTitle}>Original Title</i>
           <span className={css.value}>{original_title}</span>
-          <i className={css.movieItemTitle}>Genre</i>          
+                    
         </div>
         <h3 className={css.aboutTitle}>About</h3>
         <article className={css.aboutText}>{overview}</article>
