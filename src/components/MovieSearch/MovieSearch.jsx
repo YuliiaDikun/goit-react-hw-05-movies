@@ -7,8 +7,7 @@ export function MovieSearch() {
   const [searchMovies, setSearchMovies] = useState([]);
   useEffect(() => {
     if (!searchValue) return;
-    getMovieByQuery(searchValue).then(({ results }) => {
-      console.log(results);
+    getMovieByQuery(searchValue).then(({ results }) => {      
       setSearchMovies(results);
     });
   }, [searchValue]);

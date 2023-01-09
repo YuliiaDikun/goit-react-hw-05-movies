@@ -1,5 +1,6 @@
 .movie {
   margin-top: 15px;
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;

@@ -5,8 +5,7 @@ import css from './Home.module.css';
 export const Home = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
-    getTrendingMovie().then(({ results }) => {
-      console.log(results);
+    getTrendingMovie().then(({ results }) => {      
       setMovies(results);
     });
   }, []);
