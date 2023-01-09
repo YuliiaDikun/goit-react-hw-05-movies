@@ -1,4 +1,4 @@
-.movie{
+.movie {
   margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
@@ -6,13 +6,13 @@
 }
 .image {
   border-radius: 5px;
-  width: 150px; 
+  width: 150px;
 }
 
 .movieDescription {
-  max-width: 240px; 
+  max-width: 240px;
 }
-.movieName { 
+.movieName {
   font-size: 20px;
   line-height: calc(23 / 20);
 }
@@ -61,7 +61,7 @@
     height: 374px;
     margin-right: 68px;
   }
-  .movieDescription{
+  .movieDescription {
     max-width: 350px;
     margin-top: 0;
   }
@@ -69,22 +69,28 @@
     margin-top: 20px;
     margin-top: 0;
   }
-  .gridContainer{
+  .gridContainer {
     margin-top: 20px;
   }
+}
+.btnContainer {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  color: black;
+  
 }
 @media screen and (min-width: 1200px) {
   .image {
     width: 550px;
-    height: 478px;
+    height: auto;
     margin-right: 16px;
   }
-  .movieDescription{
+  .movieDescription {
     max-width: 391px;
   }
   .movieName {
     font-size: 30px;
     line-height: calc(35 / 30);
   }
-  
 }

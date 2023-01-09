@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link,  Outlet  } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieById } from 'services/movieAPI';
 import css from './Movie.module.css';
@@ -13,8 +13,17 @@ export const Movie = () => {
   }, [id]);
   if (!movie) {
     return null;
-  }  
-  const {poster_path, original_title, title, name,vote_average, vote_count, popularity, overview } = movie;
+  }
+  const {
+    poster_path,
+    original_title,
+    title,
+    name,
+    vote_average,
+    vote_count,
+    popularity,
+    overview,
+  } = movie;
   return (
     <div className={css.movie}>
       <div className={css.imgContainer} width="240">
@@ -37,10 +46,17 @@ export const Movie = () => {
           <span className={css.value}>{popularity}</span>
           <i className={css.movieItemTitle}>Original Title</i>
           <span className={css.value}>{original_title}</span>
-                    
         </div>
         <h3 className={css.aboutTitle}>About</h3>
         <article className={css.aboutText}>{overview}</article>
+        
+      </div>
+      <div >
+        <div className={css.btnContainer}>
+        <Link to="reviews" >Go through the reviews</Link>
+        <Link to="cast" >Get to know the team</Link>
+        </div>
+        <Outlet />
       </div>
     </div>
   );

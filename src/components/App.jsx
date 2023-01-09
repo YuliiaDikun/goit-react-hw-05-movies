@@ -3,23 +3,9 @@ import { Routes, Route, NavLink } from 'react-router-dom';
 import { Home } from 'pages/Home/Home';
 import { Movies } from 'pages/Movies/Movies';
 import { Movie } from './Movie/Movie';
-
-export const App = () => {
-  //   const [query, setQuery] = useState('');
-  //   const [page, setPage] = useState(1);
-  //   const [movies, setMovies] = useState([]);
-  //   const [isEmpty, setIsEmpty] = useState(false);
-  //   const [error, setError] = useState(null);
-
-  //   useEffect(() => {
-  //     getMovieByQuery(query).then(({ results }) => {
-  //       setMovies(results);
-  //     });
-  //   }, [query]);
-
-  //   const onFormSubmit = query => {
-  //     setQuery(query);
-  //   };
+import { Cast } from './Cast/Cast';
+import { Comments } from './Comments/Comments';
+export const App = () => {  
   return (
     <>
       <nav>
@@ -29,7 +15,10 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
-        <Route path="/movie/:id" element={<Movie />} />
+        <Route path="/movie/:id" element={<Movie />} >
+            <Route path="reviews" element={<Comments />} />
+            <Route path="cast" element={<Cast />} />
+        </Route>
       </Routes>
     </>
   );
