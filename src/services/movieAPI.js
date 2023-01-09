@@ -22,6 +22,10 @@ export const getMovieByQuery = async query => {
   });
   return data;
 };
+export const getMovieById = async movie_id => {
+    const { data } = await axios.get(`/movie/${movie_id}`);    
+    return data;
+  };
 
 // export default class FilmApi {
 //   constructor() {

@@ -1,35 +1,36 @@
-import { useState, useEffect } from 'react';
-import { MovieSearch } from './MovieSearch/MovieSearch';
-import { MovieList } from './MovieList/MovieList';
-import { getMovieByQuery, getTrendingMovie } from 'services/movieAPI';
+import { Routes, Route, NavLink } from 'react-router-dom';
+
+import { Home } from 'pages/Home/Home';
+import { Movies } from 'pages/Movies/Movies';
+import { Movie } from './Movie/Movie';
 
 export const App = () => {
-  const [query, setQuery] = useState('');
-  const [page, setPage] = useState(1);
-  const [movies, setMovies] = useState([]);
-  const [isEmpty, setIsEmpty] = useState(false);
-  const [error, setError] = useState(null);
+  //   const [query, setQuery] = useState('');
+  //   const [page, setPage] = useState(1);
+  //   const [movies, setMovies] = useState([]);
+  //   const [isEmpty, setIsEmpty] = useState(false);
+  //   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    getTrendingMovie().then(({ results }) => { 
-      console.log(results);
-      setMovies(results);
-    });
-  }, []);
+  //   useEffect(() => {
+  //     getMovieByQuery(query).then(({ results }) => {
+  //       setMovies(results);
+  //     });
+  //   }, [query]);
 
-  useEffect(() => {
-    getMovieByQuery(query).then(({ results }) => {
-      setMovies(results);
-    });
-  }, [query]);
-
-  const onFormSubmit = query => {
-    setQuery(query);
-  };
+  //   const onFormSubmit = query => {
+  //     setQuery(query);
+  //   };
   return (
     <>
-      <MovieSearch onFormSubmit={onFormSubmit} />
-      <MovieList movies={ movies} />
+      <nav>
+        <NavLink to="/">Trending movies</NavLink>
+        <NavLink to="/movies">movies</NavLink>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movie/:id" element={<Movie />} />
+      </Routes>
     </>
   );
 };

@@ -1,0 +1,86 @@
+.movie{
+  display: flex;
+}
+.image {
+  border-radius: 5px;
+}
+
+.movieDescription {
+  margin-top: 6px; 
+}
+.movieName {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+}
+.gridContainer {
+  display: grid;
+  margin-top: 6px;
+  grid-row-gap: 8px;
+  grid-column-gap: 15px;
+  grid-template-columns: auto auto;
+
+  font-size: 12px;
+  line-height: calc(16 / 12);
+}
+.movieItemTitle {
+  display: block;
+  color: black;
+  font-style: normal;
+}
+.voteFocus {
+  padding: 1px 10px 1px 10px;
+
+  background: orange;
+  border-radius: 5px;
+}
+.votesUnactive {
+  padding: 1px 10px 1px 10px;
+  background: gray;
+  border-radius: 5px;
+}
+
+.aboutTitle {
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+}
+.aboutText {
+  margin-top: 8px;
+  font-size: 12;
+  line-height: calc(20 / 12);
+}
+
+@media screen and (min-width: 768px) {
+  .image {
+    width: 264px;
+    height: 374px;
+    margin-right: 68px;
+  }
+  .movieDescription{
+    max-width: 264px;
+    margin-top: 0;
+  }
+  .movieName {
+    margin-top: 0;
+  }
+  .gridContainer{
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .image {
+    width: 375px;
+    height: 478px;
+    margin-right: 16px;
+  }
+  .movieDescription{
+    max-width: 391px;
+  }
+  .movieName {
+    font-size: 30px;
+    line-height: calc(35 / 30);
+  }
+  
+}
