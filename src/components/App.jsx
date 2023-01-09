@@ -5,10 +5,11 @@ import { Movies } from 'pages/Movies/Movies';
 import { Movie } from './Movie/Movie';
 import { Cast } from './Cast/Cast';
 import { Comments } from './Comments/Comments';
+import css from './App.module.css';
 export const App = () => {  
   return (
     <>
-      <nav>
+      <nav className={css.nav}>
         <NavLink to="/">Trending movies</NavLink>
         <NavLink to="/movies">movies</NavLink>
       </nav>

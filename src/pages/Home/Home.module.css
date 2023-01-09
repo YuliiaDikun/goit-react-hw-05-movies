@@ -1,4 +1,7 @@
 .title {
+    padding-top: 20px;
     text-align: center;
     font-size: 35px;
+    color: #03054a;
+    text-transform: uppercase;
 }
