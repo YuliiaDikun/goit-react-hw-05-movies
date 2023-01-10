@@ -17,7 +17,7 @@
   width: 280px;
 }
 .films__item:hover {
-  box-shadow: 7px -7px 21px rgba(220, 4, 48, 0.6);
+  box-shadow: 7px -7px 21px rgba(52, 88, 5, 0.6);
 }
 .films__img {
   height: 400px;
