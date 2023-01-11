@@ -2,7 +2,7 @@ import { useParams, Link,  Outlet  } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieById } from 'services/movieAPI';
 import css from './Movie.module.css';
-export const Movie = () => {
+export const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const { id } = useParams();
   useEffect(() => {

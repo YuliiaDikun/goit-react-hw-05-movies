@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
-import css from '../App.module.scss';
+import css from './Layout.module.css';
 
 const styles = {
   color: '#010101',
