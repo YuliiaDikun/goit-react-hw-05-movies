@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/430.074c1c4d.chunk.js","mappings":"0JAGA,UAHmB,WACf,OAAO,iDACV,C","sources":["pages/ErrorPage.jsx"],"sourcesContent":[" const ErrorPage = () => {\n    return <div>Something get wrong!</div>\n}\nexport default ErrorPage;"],"names":[],"sourceRoot":""}
