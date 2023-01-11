@@ -1,22 +1,27 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { getMovieByQuery } from 'services/movieAPI';
 import { MovieList } from 'components/MovieList/MovieList';
-import css from './MovieSearch.module.css';
-export function MovieSearch() {
-  const [searchValue, setSearchValue] = useState('');
+import css from './Movies.module.css';
+export function Movies () {  
   const [searchMovies, setSearchMovies] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const movieToSearch = searchParams.get('query') ?? '';
+
   useEffect(() => {
-    if (!searchValue) return;
-    getMovieByQuery(searchValue).then(({ results }) => {      
+    if (!movieToSearch) return;
+    setSearchQuery(movieToSearch);
+    getMovieByQuery(movieToSearch).then(({ results }) => {      
       setSearchMovies(results);
     });
-  }, [searchValue]);
+  }, [movieToSearch]);
 
   const handleSubmit = event => {
     event.preventDefault();
-    const query = event.target.elements.searchMovie.value;
-    setSearchValue(query);
-    event.target.reset();
+    setSearchParams({ query: searchQuery });
+    
   };
 
   return (
@@ -34,6 +39,7 @@ export function MovieSearch() {
             name="searchMovie"
             autoFocus
             placeholder="Search movie"
+            onChange={e => setSearchQuery(e.target.value)}
           />
         </form>
       </header>

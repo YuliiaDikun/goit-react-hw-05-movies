@@ -1,8 +1,10 @@
-import { useParams, Link,  Outlet  } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
+import { useState, useEffect, Suspense } from 'react';
 import { getMovieById } from 'services/movieAPI';
-import css from './Movie.module.css';
+import css from './MovieDetails.module.css';
 export const MovieDetails = () => {
+  const location = useLocation();
+
   const [movie, setMovie] = useState(null);
   const { id } = useParams();
   useEffect(() => {
@@ -24,7 +26,10 @@ export const MovieDetails = () => {
     popularity,
     overview,
   } = movie;
+  const backLinkHref = location.state?.from ?? "/movies";
   return (
+    <>
+    <Link to={backLinkHref}>Go back</Link>
     <div className={css.movie}>
       <div className={css.imgContainer} width="240">
         <img
@@ -49,15 +54,17 @@ export const MovieDetails = () => {
         </div>
         <h3 className={css.aboutTitle}>About</h3>
         <article className={css.aboutText}>{overview}</article>
-        
       </div>
-      <div >
+      <div>
         <div className={css.btnContainer}>
-        <Link to="reviews" >Go through the reviews</Link>
-        <Link to="cast" >Get to know the team</Link>
+          <Link to="reviews" state={{ from: backLinkHref }}>Go through the reviews</Link>
+          <Link to="cast" state={{ from: backLinkHref }}>Get to know the team</Link>
         </div>
+        <Suspense fallback={null}>
         <Outlet />
+      </Suspense>
       </div>
     </div>
+    </>
   );
 };

@@ -1,0 +1,112 @@
+
+.films__item {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 280px;
+  }
+  .films__item:hover {
+    box-shadow: 7px -7px 21px rgba(52, 88, 5, 0.6);
+  }
+  .films__img {
+    height: 400px;
+    opacity: 1;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .films__img>img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+  }
+  .films__description {
+    position: relative;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: calc(16 / 12);
+    padding: 8px 5px;  
+    background-color: #e7e7e7;
+    color: #03054a;
+  }
+  
+  .films__name {
+    text-transform: uppercase;
+    color: rgb(12, 12, 12);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  
+  .films__container {
+    display: flex;
+    align-items: baseline;
+  }
+  
+  .films__info {
+    margin-top: 5px;
+    display: inline-block;
+    color: orange;
+  }
+  
+  .films__rating {
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    color: white;
+    background-color: orange;
+    margin-left: 5px;
+  }
+  
+  .films__fav-icon {
+    position: absolute;
+    bottom: -4px;
+    right: -5px;
+    scale: 0.5;
+    fill: grey;
+    cursor: pointer;
+  }
+  
+  .active {
+    fill: orange;
+    scale: 0.6;
+  }
+  
+  .recom {
+    text-align: center;
+    margin-top: 15px;
+  }
+  @media screen and (min-width: 768px) {
+      .films {
+          gap: 32px;
+      }
+  
+      .films__item {
+          width: 336px;
+      }
+  
+      .films__img {
+          height: 455px;
+      }
+  }
+  
+  @media screen and (min-width: 1200px) {
+      .films {
+          gap: 16px;
+      }
+  
+      .films__item {
+          width: 394px;
+      }
+  
+      .films__img {
+          height: 574px;
+      }
+  
+      .films__description {
+          font-size: 20px;
+          line-height: calc(24 / 20);
+      }
+  }

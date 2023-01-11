@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+import { Outlet } from "react-router-dom";
 import { MovieList } from 'components/MovieList/MovieList';
 import { useState, useEffect } from 'react';
 import { getTrendingMovie } from 'services/movieAPI';
@@ -17,6 +19,10 @@ export const Home = () => {
           <MovieList movies={movies} />
         </div>
       </section>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>   
     </main>
+    
   );
 };
