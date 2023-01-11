@@ -2,7 +2,7 @@ import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { useState, useEffect, Suspense } from 'react';
 import { getMovieById } from 'services/movieAPI';
 import css from './MovieDetails.module.css';
-export const MovieDetails = () => {
+ const MovieDetails = () => {
   const location = useLocation();
 
   const [movie, setMovie] = useState(null);
@@ -60,7 +60,7 @@ export const MovieDetails = () => {
           <Link to="reviews" state={{ from: backLinkHref }}>Go through the reviews</Link>
           <Link to="cast" state={{ from: backLinkHref }}>Get to know the team</Link>
         </div>
-        <Suspense fallback={null}>
+        <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
       </div>
@@ -68,3 +68,4 @@ export const MovieDetails = () => {
     </>
   );
 };
+export default MovieDetails;

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { getReviewsById } from 'services/movieAPI';
 import css from './Comments.module.css';
 
-export const Comments = () => {
+const Comments = () => {
   const [reviews, setReviews] = useState(null);
   const { id } = useParams();
   useEffect(() => {
@@ -43,3 +43,4 @@ export const Comments = () => {
     </>
   );
 };
+export default Comments;
